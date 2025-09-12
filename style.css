@@ -1,100 +1,154 @@
-/* General Styling */
-:root {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --header-color: #00bcd4;
-    --accent-color: #00bcd4;
-    --card-bg: #1e1e1e;
-    --border-color: #333;
-    --code-bg: #2d2d2d;
-    --code-text: #f0f0f0;
+/* style.css */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
+    font-family: 'Courier Prime', monospace;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f9f9f9;
     padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-/* Header & Main Container */
-header {
-    background-color: var(--card-bg);
-    padding: 3rem 1rem;
-    text-align: center;
-    border-bottom: 2px solid var(--accent-color);
-}
-
-h1 {
-    font-family: 'Courier Prime', monospace; /* A tech-focused, monospaced font */
-    font-size: 2.5rem;
-    color: var(--header-color);
-    letter-spacing: 2px;
     margin: 0;
 }
 
-p {
-    margin: 0.5rem 0 0;
+header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e6e6e6;
+    border-bottom: 4px solid #4a90e2;
 }
 
-main {
-    max-width: 900px;
+header h1 {
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-family: 'Fira Code', monospace;
+    font-weight: 500;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+    letter-spacing: 0.3px;
+}
+
+#posts-container {
+    max-width: 800px;
     margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-/* Post Styling */
-.post {
-    background-color: var(--card-bg);
-    padding: 2rem;
+    padding: 0 2rem;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
 }
 
-.post:last-child {
-    margin-bottom: 0;
+/* Post styling (assuming each post is appended dynamically as a <article>) */
+#posts-container > article {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
 }
 
-/* Typography and Markdown Elements */
-h2, h3, h4 {
-    color: var(--text-color);
-    margin-top: 1.5rem;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
+#posts-container > article:last-child {
+    border-bottom: none;
 }
 
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+#posts-container h2 {
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.3px;
 }
 
-a:hover {
-    color: #4dd0e1;
+#posts-container p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
-ul, ol {
-    padding-left: 20px;
+#posts-container code {
+    font-family: 'Fira Code', monospace;
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #d63384;
+    border: 1px solid #e0e0e0;
 }
 
-/* Code Blocks */
-pre, code {
-    font-family: "Fira Code", "Source Code Pro", monospace;
-    background-color: var(--code-bg);
-    color: var(--code-text);
-    border-radius: 5px;
-    padding: 0.1em 0.4em;
-    font-size: 0.9em;
-}
-
-pre {
-    padding: 1rem;
+#posts-container pre {
+    font-family: 'Fira Code', monospace;
+    background-color: #1e1e1e;
+    color: #e6e6e6;
+    padding: 1.5rem;
+    border-radius: 8px;
     overflow-x: auto;
-    border: 1px solid var(--border-color);
-    white-space: pre-wrap;
-    word-break: break-all;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-left: 4px solid #4a90e2;
+}
+
+#posts-container a {
+    color: #4a90e2;
+    text-decoration: none;
+    border-bottom: 1px dashed #4a90e2;
+    transition: border-bottom 0.3s ease;
+}
+
+#posts-container a:hover {
+    border-bottom: 1px solid #4a90e2;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    #posts-container {
+        margin: 1.5rem 1rem;
+        padding: 2rem;
+    }
+
+    #posts-container h2 {
+        font-size: 1.6rem;
+    }
+
+    #posts-container pre {
+        font-size: 0.9rem;
+        padding: 1.2rem;
+    }
+}
+
+/* Subtle animation on load */
+body {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
