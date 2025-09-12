@@ -1,52 +1,100 @@
+/* General Styling */
+:root {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-color: #00bcd4;
+    --accent-color: #00bcd4;
+    --card-bg: #1e1e1e;
+    --border-color: #333;
+    --code-bg: #2d2d2d;
+    --code-text: #f0f0f0;
+}
+
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
+/* Header & Main Container */
 header {
-    background-color: #72a555;
-    color: white;
-    padding: 2rem 1rem;
+    background-color: var(--card-bg);
+    padding: 3rem 1rem;
     text-align: center;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-}
-
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-radius: 8px;
-}
-
-.post {
-    padding: 1.5rem;
-    border-bottom: 1px solid #eee;
-}
-
-.post:last-child {
-    border-bottom: none;
-}
-
-/* Markdown styling */
-h2 {
-    color: #4b6e3f;
-    border-bottom: 2px solid #a3d297;
-    padding-bottom: 0.5rem;
+    font-family: 'Courier Prime', monospace; /* A tech-focused, monospaced font */
+    font-size: 2.5rem;
+    color: var(--header-color);
+    letter-spacing: 2px;
+    margin: 0;
 }
 
 p {
-    margin-bottom: 1rem;
+    margin: 0.5rem 0 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Post Styling */
+.post {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.post:last-child {
+    margin-bottom: 0;
+}
+
+/* Typography and Markdown Elements */
+h2, h3, h4 {
+    color: var(--text-color);
+    margin-top: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4dd0e1;
 }
 
 ul, ol {
-    margin-left: 2rem;
-}   
+    padding-left: 20px;
+}
+
+/* Code Blocks */
+pre, code {
+    font-family: "Fira Code", "Source Code Pro", monospace;
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    border-radius: 5px;
+    padding: 0.1em 0.4em;
+    font-size: 0.9em;
+}
+
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    white-space: pre-wrap;
+    word-break: break-all;
+}
