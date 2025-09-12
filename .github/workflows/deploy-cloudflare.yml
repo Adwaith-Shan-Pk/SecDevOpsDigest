@@ -15,11 +15,15 @@ jobs:
       - name: Generate posts-list.js
         id: generate_posts_list
         run: |
-          POSTS_DIR="posts"
-          POSTS_ARRAY_CONTENT=$(find "$POSTS_DIR" -maxdepth 1 -type f -name "*.md" | sort | sed 's|^posts/|    "posts/|g; s|\\.md|\\.md",|g; s/,$//')
           echo "const markdownFiles = [" > posts-list.js
-          echo "$POSTS_ARRAY_CONTENT" >> posts-list.js
+          for file in $(ls -1 posts/*.md | sort -r); do
+            echo "    \"${file}\"," >> posts-list.js
+          done
+          # Remove the trailing comma from the last item
+          sed -i '$ s/,$//' posts-list.js
           echo "];" >> posts-list.js
+          echo "Generated posts-list.js content:"
+          cat posts-list.js
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
