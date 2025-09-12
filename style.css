@@ -1,0 +1,52 @@
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+header {
+    background-color: #72a555;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.post {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+/* Markdown styling */
+h2 {
+    color: #4b6e3f;
+    border-bottom: 2px solid #a3d297;
+    padding-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+ul, ol {
+    margin-left: 2rem;
+}   
