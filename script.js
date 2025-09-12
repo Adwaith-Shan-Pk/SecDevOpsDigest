@@ -1,12 +1,13 @@
-// A list of your markdown files. Just add new filenames here.
-const markdownFiles = [
-    'posts/welcome.md',
-    'posts/first-plant.md'
-];
-
 async function fetchAndRenderMarkdown() {
     const postsContainer = document.getElementById('posts-container');
-    postsContainer.innerHTML = ''; 
+    postsContainer.innerHTML = ''; // Clear previous content
+
+    if (typeof markdownFiles === 'undefined' || markdownFiles.length === 0) {
+        postsContainer.innerHTML = '<p>No posts found. Add a new Markdown file to the "posts/" directory and push to GitHub!</p>';
+        return;
+    }
+
+   
     for (const file of markdownFiles) {
         try {
             const response = await fetch(file);
@@ -15,9 +16,10 @@ async function fetchAndRenderMarkdown() {
             }
             const markdownText = await response.text();
             
+            // Convert markdown to HTML
             const htmlContent = marked.parse(markdownText);
             
-            
+            // Create a new div for the post and inject the content
             const postDiv = document.createElement('div');
             postDiv.className = 'post';
             postDiv.innerHTML = htmlContent;
