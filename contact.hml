@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | SecDevOps Digest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>SecDevOps Digest</h1>
+        <p>A blog on security and automation.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="static-page">
+        <h2>Get in Touch</h2>
+        <p>Have a question, a topic suggestion, or just want to connect? I'd love to hear from you!</p>
+        <p>You can reach me via email or connect with me on social media. I'm always open to discussing new ideas and collaborations.</p>
+
+        <section class="contact-info">
+            <h3>Email</h3>
+            <p>Email me directly at: <a href="mailto:contact@secdevopsdigest.com">contact@secdevopsdigest.com</a></p>
+        </section>
+
+        <section class="contact-info">
+            <h3>Social Media</h3>
+            <p>Connect with me on:</p>
+            <ul>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Twitter/X</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SecDevOps Digest</p>
+        <p>Built with GitHub Actions and Cloudflare Pages</p>
+    </footer>
+
+</body>
+</html>
