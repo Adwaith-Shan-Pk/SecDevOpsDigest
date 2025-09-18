@@ -19,6 +19,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+
+      - name: Generate posts-list.js
+        run: |
+          echo "const markdownFiles = [" > posts-list.js
+          for file in $(ls -1 posts/*.md | sort -r); do
+            echo "    \"${file}\"," >> posts-list.js
+          done
+          # Remove the trailing comma from the last item
+          sed -i '$ s/,$//' posts-list.js
+          echo "];" >> posts-list.js
+          echo "--- Generated posts-list.js ---"
+          cat posts-list.js
+          echo "-----------------
      
       - name: Log in to GHCR
         uses: docker/login-action@v3
